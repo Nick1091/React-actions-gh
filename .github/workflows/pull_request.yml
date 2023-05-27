@@ -5,6 +5,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Print event of issue
+        shell: pwsh
         run: echo "${{ toJSON(github) }}"
 
       

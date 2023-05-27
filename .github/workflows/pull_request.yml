@@ -4,6 +4,7 @@ jobs:
   print:
     runs-on: windows-latest
     steps:
-      - name: Print context
-        run: echo "${{ toJSON(github) }}" 
+      - name: Print event of issue
+        run: echo "${{ toJSON(github) }}"
+
       

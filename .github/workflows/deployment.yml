@@ -2,7 +2,9 @@ name: Test
 on: 
   push:
     branches:
-    - 'main'
+      - 'main'
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: windows-latest

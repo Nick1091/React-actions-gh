@@ -14,7 +14,7 @@ jobs:
       - name: Cache deps
         uses: actions/cache@v3
         with: 
-          path: ~/.npm
+          path: C:/Users/Public
           key: node-modules-${{ hashFiles('**/package-lock.json')}}
       - name: Install deps
         run: npm install
@@ -22,14 +22,13 @@ jobs:
         run: npm run test
   lint:
     runs-on: windows-latest
-    needs: test
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
       - name: Cache deps
         uses: actions/cache@v3
         with: 
-          path: ~/.npm
+          path: C:/Users/Public
           key: node-modules-${{ hashFiles('**/package-lock.json')}}  
       - name: Install deps
         run: npm install
@@ -37,14 +36,14 @@ jobs:
         run: npm run lint
   build:
     runs-on: windows-latest
-    needs: lint
+    needs: [lint, test]
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
       - name: Cache deps
         uses: actions/cache@v3
         with: 
-          path: ~/.npm
+          path: C:/Users/Public
           key: node-modules-${{ hashFiles('**/package-lock.json')}}  
       - name: Install deps
         run: npm install

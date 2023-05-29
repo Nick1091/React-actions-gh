@@ -6,6 +6,6 @@ jobs:
     steps:
       - name: Print event of issue
         shell: pwsh
-        run: echo "${{ toJSON(github) }}"
+        run: echo '${{ toJSON(github) }}'
 
       
